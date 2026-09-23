@@ -1,10 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import OrdersPage from "./pages/OrdersPage";
+import OrderDetailsPage from "./pages/OrderDetailsPage";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<OrdersPage />} />
+        <Route path="/orders/:id" element={<OrderDetailsPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
